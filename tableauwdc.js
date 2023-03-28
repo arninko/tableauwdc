@@ -1,4 +1,33 @@
 (function () {
+    var clientID='xellia';
+    var clientToken='token';
+    var userID='10002077';
+    var authURL='https://xellia.plateau.com/learning/oauth-api/rest/v1/token';
+    var dataURL="https://xellia.plateau.com/learning/odatav4/public/admin/user-service/v2/Users?$filter=targetUserID eq '10002077'";
+    var authenticationString= clientID + ':' + clientToken;
+    authenticationString= btoa(authenticationString);
+    var header = {
+        'Authorization' : authenticationString,
+        'Content-Type' : 'application/json'
+    };
+    var body = {
+        'grant_type':'client_credentials',
+        'scope':{
+            'userId':userID,
+            'companyId':clientID,
+            'userType':'admin',
+            'resourceType':'learning_public_api'
+        }
+    };
+    const xhttp = new XMLHttpRequest();
+    xhttp.onload = function() {
+        // What to do when the response is ready
+    };
+    xhttp.open("POST", authURL, false);
+    xhttp.setRequestHeader(header);
+    xhttp.send(body);
+    
+    
     var myConnector = tableau.makeConnector();
 
     myConnector.init = function(initCallback) {
