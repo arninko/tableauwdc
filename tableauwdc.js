@@ -1,6 +1,11 @@
 (function () {
     var myConnector = tableau.makeConnector();
 
+    myConnector.init = function(initCallback) {
+        initCallback();
+        tableau.submit();
+    };
+    
     myConnector.getSchema = function (schemaCallback) {
       var cols = [{
           id: "id",
@@ -49,9 +54,3 @@
 
     tableau.registerConnector(myConnector);
 })();
-$(document).ready(function () {
-    $("#submitButton").click(function () {
-        tableau.connectionName = "USGS Earthquake Feed";
-        tableau.submit();
-    });
-});
