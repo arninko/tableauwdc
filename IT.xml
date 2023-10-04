@@ -1,0 +1,474 @@
+<root>
+<reference>ITIL, ASTM E2500-13, GAMP5</reference>
+<hardware>
+	<infrastructure ID="">
+		<servers Status="decomissioned" Type="Application, VM, Backup, Print, Hopping, Domain, File" Purpose="lab, development, acceptance, production, accesscontrol, switchboard"
+		OSVersion="" Model="Virtual" Domain="" rebootperiod="weekly" backupID="">
+		<lcmserver version="" systemowner="" validationdate=""></lcmserver>
+		</servers>
+		<network type="WIFI, ETHERNET, VPN, switch, router, firewall, gateway">
+		</network>
+		<equipment>
+		</equipment>
+	</infrastructure>
+</hardware>
+
+<responsibility>
+	<OnPremise><Company>(Network, Storage, Server, Virtualization, OS, Middleware, Runtime, Data, Application)</Company>
+	</OnPremise>
+	<IaaS><Vendor>(Network, Storage, Server, Virtualization)</Vendor><Company>(OS, Middleware, Runtime, Data, Application)</Company>
+	</IaaS>
+	<PaaS><Vendor>(Network, Storage, Server, Virtualization, OS, Middleware, Runtime)</Vendor><Company>(Data, Application)</Company>
+	</PaaS>
+	<SaaS><Vendor>(Network, Storage, Server, Virtualization, OS, Middleware, Runtime, Data, Application)</Vendor>
+	</SaaS>
+</responsibility>
+
+<systems>
+<infrastructure ID="" type="GC, DNS, DHCP, WINS, RIS, FileServer, PrintServer, LabelServer, Rack, Cluster"></infrastructure>
+<backups></backups>
+<applications ID="" Title="Application" EquipmentID="Scale" Site="" Status="Operation" Type="Business/Infrastucture" Owner="Department" User="Department2" Description="" Network="" Vendor="Contractor" responsibility="OnPremise"
+category="GAMP1:InfrastructureApp(OS, DB, Excel, Calendar, GitHub)/ GAMP4:ConfiguredForBusinessApp/ GAMP3:RuntimeConfiguredOnlyApp/ GAMP5:CustomApp" rawdata="electronic/ paper">
+<hierarchy>
+<application Title="OperationalTechnology(OT)">
+<application Title="IndustrialControlSystem(ICS)">
+<application Title="DeltaV">
+<application Title="SupervisoryControlandDataAcquisition(SCADA)" parts="ControlUnit, RemoteTerminalUnit(RTU)">
+<application Title="ProcessControlSystem">
+<application Title="subcentralOfSCADA">
+<application Title="ProgrammableLogicController(PLC)"></application>
+<application Title="HumanMachineInterface"></application>
+</application>
+<application Title="LineServer"></application>
+<application Title="DiscreteProcessControlsystem(DPC)">
+<application Title="ProgrammableLogicController(PLC)"></application>
+</application>
+</application>
+</application>
+</application>
+</application>
+</application>
+</hierarchy>
+<riskassessment RANeeded="Yes">
+<workflow>
+<steprisk Business="RPN:SeverityOccurenceDetection" Regulatory="RPN" Customer="RPN" Application="RPN" Infrastructure="RPN" Quality="RPN" sensitivity="RPN">
+<hazard>
+<action control="AcceptRisk /ManageRisk /TranserRisk /EliminateRisk" type="corrective /preventive">responsible, dateDue</action>
+</hazard>
+<requirementrisk requirementtype="standard /configured /customized" Business="RPN:SeverityOccurenceDetection" Regulatory="RPN" Customer="RPN" Application="RPN" Infrastructure="RPN" Quality="RPN" sensitivity="RPN">
+<test type="positive /negative /invalidInput /boundaryInput /unitTest /codeReview"></test>
+<hazard></hazard>
+</requirementrisk>
+</steprisk>
+</workflow>
+</riskassessment>
+<servers></servers>
+<lcmapplication version="" systemowner="" businessowner="" validationdate="" periodicreviewdate="" periodicreviewperiod="annual"></lcmapplication>
+<budget shipmentdate="" consultingfee="" hardwarefee="" softwarefee="" licensefee="" maintenancefee=""></budget>
+Training, Monitoring, Reporting, Measurement, Recruitment
+, Documentation (communication, office, production, laboratory, finance, distribution, validation, engineering)
+, Operation (ITadmin, production, laboratory, distribution, security)
+</applications>
+</systems>
+
+
+<projects></projects>
+
+<sites>
+<systems></systems>
+<servers></servers>
+<network></network>
+<projects></projects>
+
+</sites>
+
+
+<security>
+Active Directory Domain Controller: password complexity/effectivity, automatic time out, number of login attempts, new password after first log-on, user level
+<dataloss>cloud, attack</dataloss>
+<hardwareloss>destruction, theft, accident</hardwareloss>
+<humanhealth>ergonomy, effectOnEye, effectOnEar, effectOnHand</humanhealth>
+<sensitivity>racialOrigin, ethnicalOrigin, politicalOpinion, religion, philosophicalBelief, healthInformation, sexualOrientation, tradeUnionMember</sensitivity>
+<confidentiality>authorizationLevel, password, pictureSurveillance, videoSurveillance
+,marital status, residentialStatus, employmentStatus
+, income, salary, benefit, bonus
+, educationLevel, job application, job role, interview information, references, development talks, performance evaluation
+, socialSecurityNumber, agreementNumber
+, familyRelationship, significantSocialProblem, suicideAttempt, accidentRecord, criminalRecord
+</confidentiality>
+<identity usedfor="contract" status="consentAgreedByUser" datacontroller="thisCompany" dataprocessor="internalIT /payrollProvider /recruitmentAgency /ITdeveloperCompany /consultancyFirm">
+IPaddress, login, electronicFootPrint
+, name, address, phone number, email, passport number, birthDate, nationality
+</identity>
+<environment>reuse, carbonprint, contamination, lightning, flooding</environment>
+<quality>fraud</quality>
+<businessrelationship>continual improvement</businessrelationship>
+</security>
+
+<application name="MES">
+<lcm>
+<changemanagement version="Initial" type="codeChange/ configuration/ repair/ plannedMaintenance/ emergency">
+<project>
+<demand>capacity, concept</demand>
+<projectmanagement>
+<contracts>
+<traditional>
+<prons>fullControl, efficiencyControl, costControl</prons>
+<cons>fullResponsibiltyOfSponsor, limitedResponsibilityOfEngineer, noRelationBetweenDesigner+Constructor</cons>
+<structure>
+<sponsor>
+<consultant></consultant>
+<supplier></supplier>
+<engineer>
+<designer></designer>
+<constructor>
+<subcontractor></subcontractor>
+<supplier></supplier>
+</constructor>
+</engineer>
+</sponsor>
+</structure>
+</traditional>
+<offTheShelfSolution>
+<prons>limitedResponsibility, fullResponsibiltyOfSolutionProvider, directCommunication, contractRelation=informalRelation, lowCostProjectOffice, fastRealization, guaranteeBySolutionProvider</prons>
+<cons>limitedChanges, noControl, fewSolutionProvider</cons>
+<type>
+<offTheShelf>
+<solutionProvider>design, IQ, OQ</solutionProvider>
+<sponsor>routineOperation</sponsor>
+</offTheShelf>
+<semiOffTheShelf>
+<solutionProvider>onlyForMainPart: design, IQ, OQ</solutionProvider>
+<sponsor>routineOperationOfMainPart, forAllSubParts: design, IQ, OQ, PQ, routineOperation</sponsor>
+</semiOffTheShelf>
+<productHandedOver>
+<solutionProvider>design, IQ, OQ, PQ, routineOperationForLimitedTime, training</solutionProvider>
+</productHandedOver>
+<profitHandedOver>
+<solutionProvider>design, IQ, OQ, PQ, executiveLeadership, executiveManagament, routineOperationForLimitedTime, trainingLeadership, trainingMarketing</solutionProvider>
+</profitHandedOver>
+</type>
+<structure>
+<sponsor>
+<consultant></consultant>
+<solutionProvider>
+<designer></designer>
+<subcontractor></subcontractor>
+<supplier></supplier>
+</solutionProvider>
+</sponsor>
+</structure>
+</offTheShelfSolution>
+<management>
+<prons>overlappingBetweenDesignAndImplementation, smoothChanges, bestFitConstructor, lowCostProjectOffice</prons>
+<cons>fullResponsibiltyOfSponsor, contractRelation!=informalRelation</cons>
+<type>
+<simple></simple>
+<dqiq></dqiq>
+<project></project>
+</type>
+<structure>
+<constructor>
+<consultant></consultant>
+<designer></designer>
+<supplier></supplier>
+</constructor>
+</structure>
+</management>
+</contracts>
+<finance>
+<priceBased>constructor gives offer on fix price, effects on costs are not forwarded to sponsor
+<prons>costStreamMap, noCostRiskForSponsor</prons>
+<cons>detailedPlanNeeded, noOverlappingActivities, overplannedCosts, lowQualityIfCostIncrease, overdueIfCostIncrease
+<overplannedCostForStart>typical for unitpriceBased, more payed for contructor than actual cost payed by constructor</overplannedCostForStart>
+<overplannedCostForEnd>typical for standardpriceBased, can cause liquidity issues for constructor</overplannedCostForEnd>
+</cons>
+<type>
+<standardpriceBased>total price</standardpriceBased>
+<unitpriceBased>price per one day, one cubic meter</unitpriceBased>
+<mix>some prices are based on standard, some prices are based on unit</mix>
+<closure>price can be increased if vis major, noOverplannedCost
+<changeOfMaterialCost>min percent /min time without price increase</changeOfMaterialCost>
+<changeOfLabourCost>min percent /min time without price increase</changeOfLabourCost>
+</closure>
+</type>
+</priceBased>
+
+<costBased>totalpriceNotFixed, serviceFeePlanned, otherCostsPayedIfNeededBySponsor
+<type>
+<fixedfee>in case of cost needed, a fix fee and the cost is payed for the constructor</fixedfee>
+<percent>in case of cost needed, a percent of the cost and the cost is payed for the constructor</percent>
+</type>
+</costBased>
+<targetBased>service fee in correlation with achieved status compared to target
+<prons>sanctionOverDue, successRecognition</prons>
+<cons>targetInCorrelationWithWorkload, simplePerformanceMetricSystem, changeablePerformanceMetricSystem, hardToDefineTargetCompletionFee</cons>
+<type>
+<costtarget></costtarget>
+<duetarget></duetarget>
+<performancetarget></performancetarget>
+</type>
+</targetBased>
+<CAPEX>
+<supplier>requestForInformation > requestForProposal > requestForQuotation
+<audit type="PublicInformation /Certificate /AuditByThirdParty /PaperAduit /OnSiteAudit" auditor="selfAuditByOwner /internalAudit /externalAudit"></audit>
+</supplier>
+</CAPEX>
+<OPEX>
+<SME>
+<internal>businessOwner, systemOwner, user(employee, associate, contractor, consultant, temporary)</internal>
+<external></external>
+</SME>
+</OPEX>
+<ROI></ROI>
+<COGS></COGS>
+</finance>
+<applicationProcess>how to select sponsored constructors from applicable constructors
+<type>
+<open>no peer review, post review is optional, every application reviewed</open>
+<selective>peer reviewed (certified) constructor can apply</selective>
+<twolevel>first level = peer review
+<twoenvelopes>first: certification of constructor, second: application of constructor</twoenvelopes>
+<separated>first:DQ+IQ proposal in accordance to sponsor's DQ+IQ requirements, second: financial application</separated>
+<twosteps>first:selection of constructor based on unit price with open/selective application
+, second: constructor participates in DQ and finalize their application
+</twosteps>
+</twolevel>
+<invitation>invitation of some constructors, sharing requirements, application compiled together with sponsor, contract for selected price</invitation>
+</type>
+</applicationProcess>
+
+<marketing>product value, statisfaction of stakeholders
+<process> stakeholders > interest > relation to project > influence by stakeholders > stakeholderMap > tools > review > marketing lcm
+<stakeholders>
+<internal>PM, head of project office, owner of project office, SMEs of project, internal users of project value, company union</internal>
+<external>authority, business partner (customer, vendor, supplier, service provider), external users of project value, country union, public, local community, protection agencies (HSE, animal, consumer)
+</external>
+</stakeholders>
+<relation>-2=strongly refuse, 0= neutral, 2=strongly supports</relation>
+<influence>1=negligable, 2= significant, 3=primary</influence>
+<stakeholderMap>
+<decartes>xAxis=influence, yAxis=relation, (x,y)=stakeholder</decartes>
+<venn>centercircle=project, sorroundingcircles=stakeholder, sorroundingcircleSize=influence, sorroundingcircleDistanceFromCenterCircle=relation</venn>
+</stakeholderMap>
+<tools>stakeholder involvement to design, consultation, compensation, feedback, change initation based on feedback</tools>
+</process>
+</marketing>
+
+</projectmanagement>
+
+</project>
+
+<validation>
+<plan>
+URS, FS, DesignSpecification, ConfigurationSpecification, System Description Specification (drawing, SLAs, integration, procedures)
+,RA (HAZOP, FMEA, SWOT, PETSLE)
+, Functional RA (company critical, site critical, workfunction critical, not critical)
+, System RA, supplier RA, stakeholder RA, security RA, e-sign RA
+, change control, document control, config management
+, defect management, procedures, training
+, support process, handover and release, communication
+<DI-RA>
+raw data, unused, log, deletion
+processed data, automated/byUser, unused, log, deletion
+form to be signed, lcm
+signature: author/reviewer/approver, activities, electronic/paper, partial/fullReport, log
+master data: lcm, log
+integration: lcm, log
+security: accessLevels, SSO/LDAP/local, securityLayer
+</DI-RA>
+</plan>
+<report>
+TM (IQ, OQ, PQ, Regression, Integration)
+<bcp-drp>SLA, availability, business impact/loss, permissable amount of data/time loss</bcp-drp>
+<training>userguide, backupprocedure
+, adminprocedure (configuration item list, runtime: Common Language Infrastructure, Common Intermediate Language, Standard Libraries)
+</training>
+<roles><role type="responsible/ accountable/ toBeConsultedWith/ toBeInformed">supplier/admin/QA, systemOwner, businessOwner, infrastructureOwner, backupOwner, endUser</role></roles>
+</report>
+</validation>
+
+<deployment>
+<finance>
+<CAPEX></CAPEX>
+<OPEX></OPEX>
+</finance>
+<infrastructure>
+<qualification>independent from application validation</qualification>
+<server>
+<OS></OS>
+<scheduler></scheduler>
+</server>
+<network>cabeling, loadBalancer</network>
+<equipment></equipment>
+</infrastructure>
+<integration>
+<application name="distributiongroup">
+<internal>configAdmin, serverAdmin, dbAdmin, networkAdmin</internal>
+<external></external>
+</application>
+</integration>
+<documentation>
+<agreement></agreement>
+<inventory></inventory>
+<bcp-drp>availability, business impact/loss, permissable amount of data/time loss</bcp-drp>
+<training>userguide, adminprocedure (user account management, master data management, access permissions, system monitoring, maintenance, calibration, patch management, start-up, shutdown), backupprocedure (backup, restore)
+</training>
+</documentation>
+</deployment>
+
+<termination>plan(archive, archiveOwner, migration, reconsiliation, decomission, destruction)</termination>
+</changemanagement>
+
+
+<routine>
+<finance>
+<OPEX></OPEX>
+<COGS></COGS>
+</finance>
+<integration>
+<application name="distributiongroup">
+<internal></internal>
+<external></external>
+<termination></termination>
+</application>
+</integration>
+<event source="userEmail, userTicket, userCall, detectionByIT, preventiveMaintenance, supplierAlert">
+noAccess, outage, operational activity without validation
+,qualification, verification, validation, planned, unplanned
+<investigationroute>request, incident, problemToEliminate
+<request> training, license, access, hardware, configuration
+<changemanagement version="nextVersion">
+</changemanagement>
+</request>
+<incident category="MES" priority="primary functions blocked organisation wide: within 1 hour">
+<approval user="ProductionManager">
+assigmentToITTechnician, registrationToKnownErrorDatabase
+, resolution, satisfactionSurveyWithUser
+<problem knownErrorDatabaseID="newEntry" relatedEvents="1/2/3">
+<rootcause></rootcause>
+<CAPA>
+<changemanagement version="correctedVersion">
+</changemanagement>
+</CAPA>
+</problem>
+</approval>
+</incident>
+</investigationroute>
+</event>
+
+<review>
+<periodicreview period="criticalAnnually">
+<maturity>resources, capability(SOP+training), improvement, preformance, leadership, culture</maturity>
+<security></security>
+<eventreview>
+<objective>
+<criticalsuccessfactor>
+<kpi>statisfaction, count, byEventStatus, dateDiff, adherenceToSLA, problemRC, cost, RFT, recurrence, byApprovalStatus</kpi>
+</criticalsuccessfactor>
+</objective>
+</eventreview>
+</periodicreview>
+<internal></internal>
+<external></external>
+</review>
+
+</routine>
+
+</lcm>
+
+<type>
+<processcontrol>
+<recruitment>
+<people>SAP PeoplePortal (performance, recruiting, employee management), Buanco Catering
+, Maxoft Workschedule Management, Promark Workschedule Management
+</people>
+<training>SAP LMS Learning Management, Promote, Articulate 360, Dreambroker</training>
+</recruitment>
+<ITinfrastructure>System Center Configuration Manager (SCCM) to configure user's laptops/ dekstops/ tablets, ipam IP address Management
+, CISCO Prime Wireless/Wired Network Management, CISCO C9800-CL Wireless Platform
+, Canon Printing, Xerox Printing
+, Ubuntu OS
+</ITinfrastructure>
+<ITapplication>Microsoft Key Management Service for Applications</ITapplication>
+<production>Cimplicity MES, DeltaV MES, ifix MES, Siemems Simatic Historian PLC, Aveva MES
+, Uhlmann Packaging, HVAC, LAF, Lifting, Loading, Transport
+, Rockwell FactoryTalk Automation Management, Automation Development, Robotic Process Automation Proof of Concept, UiPath Robotics Automation
+, Seidenader Semi Automatic Inspection
+</production>
+<laboratory>Empower Chromatography, Chromeleon Chromatography, Akta Unicorn Chromatography
+, ColdStream Thermal Analysis, Metrohm Tiamo Titration and Dosing, WinSotax Dissolution
+, PrepAsh Sulphated Ash Tester
+</laboratory>
+<distribution>Ice Lean e-Kanban, RF Smart Barcode, NiceLabel Label Management, GlobalVision Label Inspection, Zebra Label Printing
+, JDE E1 (Sales, Manufacturing, Procurement, CMO, Inventory), UFIDA ERP
+, K-Rise EasyBuyer
+, Microsoft BizTalk
+</distribution>
+<security>Citrix Netscaler Emergency Services Network (ESN) and Controlled Sytems Network (CSN) Gateway Server Access,Citrix SMS Passcode (Entrust Essentials)
+, Hyena Active Directory, Public Key Infrastructure, Local Administrator Password Solution
+, Microsoft Bitlocker Endpoint Protection, Domain Controller
+, Salto Door Access Control System
+, CISCO Firepower Management Center, CISCO Identity Services Engine, HPE ClearPass Network Access Control System
+, Docusign NonDigital Electronic Signature, Pactius GDPR
+, TXOne StellarEnforce Device/Data Lock, Remote Wipe Mobile Data Deletion
+</security>
+</processcontrol>
+<monitoring>
+<ITinfrastructure>PRTG Network Monitoring Tool</ITinfrastructure>
+<measurement>Empower, LIMS, Calibration Manager, Yokogawa Data Acquisition and Printwave
+, Trinity Antibiotic Zone Reader, MultiSizer Particle Size Analyzer, MettlerToledo LabX, PerkinElmer UV Winlab
+, AeroTrak Particle Counter, Hach Total Organic Content Analyzer
+, Celsis Accel Rapid Microbial Detection
+, Berlinger SmartView for Data Logger, Fourtec DataSuite Monitoring, Ellab Monitoring
+, PTI Ethos Container Closure Integrity Tester, Palltronic Filterintegrity Tester
+, Rockwell VantagePoint Overall Equipment Effectiveness, Blackbird Filling Machine OEE
+, Nozomi Guardian Monitoring ICS (Industrial Control System), OT (Operational Technology), IoT (Internet of Things), IT, edge and cloud assets
+</measurement>
+<security>ExacqVision Video Surveillance
+, Mimecast Phishing Protection, F-secure Online Protection, Sophos Endpoint Protection
+, Trend Micro OfficeScan Xgen Threat Protection, TXOne StellarProtect Threat Protection
+</security>
+<event>HALO ITSM (new license, issue), Trackwise Workflow
+, PepperFlow MarketingLegalRegulatory Review
+, Outlook, Plandisc Circular Calendar
+, Velocity EHS, Denkstatt EnviroData
+</event>
+</monitoring>
+<information>
+<consultancy>Azets CoZone, IQ4Business</consultancy>
+<documentation>
+<communication>Pexip Conferencing Platform, SMS Eagle, SharePoint Intranet, WebSMS
+, Cisco Telepresence Management Suite, Cisco Farlon Contact Center, Cisco Webex, Cisco Unified Communication Manager, Cisco Call Manager, Microsoft Teams, Zoom, Google Meet
+, Citrix Remote, TeamViewer Remote, SecureCRT SSH Client
+</communication>
+<office> Word, Visio, myProcess Document Management, Pharmaready Document Management, Lotus Domino
+, Nasdaq Boardadvantage Scheduling+Approving, HCL IBM Connections Networking
+, GlobalVision Document Comparision
+</office>
+<production>VersionDog Automation Change Management</production>
+<laboratory></laboratory>
+<legal>eDiscovery, Trace Third Party Database, Got Ethics WhistleBlower</legal>
+<finance>Decision Focus Contract and Resource Management
+, Concur Travel Management, Egencia Travel Management, Motus Travel Management
+, Oracle PBCS Hyperion Financial Planning, Workday Adaptive Planning with AI and ML
+,AlphaOmega FundRaising
+</finance>
+<distribution>Cision Palette Invoice, Readsoft Invoice
+, Edge Track Serialization Data, rfXcel Supply Chain, eRFX Supply Chain
+, SAP Integrated Business Planning, SAP DataHug Forecasting, SalesForce Customer Request Management
+</distribution>
+<validation>Microfocus HP Application Lifecyle Management</validation>
+<engineering>AMMS Advanced Maintenance Management, Binarit TOM2 Maintenance, Sertica Maintenance, SolidWorks eDrawings</engineering>
+<archive>TSM Backup, Veeam Backup</archive>
+</documentation>
+<reporting>HALO, JDE ReportsNow, Tableau, Smartsheet, Excel, Powerpoint, PowerBI, Alteryx Cloud-Platform Analytics
+, Anju IRMS Medical Affairs, mDoc Healthcare Management
+</reporting>
+</information>
+</type>
+
+</application>
+
+
+</root>
