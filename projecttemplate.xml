@@ -81,7 +81,9 @@
         <providers>
           <provider>
             <risk assessment="HAZOP, FMEA, SWOT, PETSLE">
-                <responsibility></responsibility>      
+                <responsibility>
+                  <ownership type="onPromise, IaaS, PaaS, Saas"></ownership>
+                </responsibility>      
                 <security></security>      
                 <bcpdrp></bcpdrp>
             </risk>
