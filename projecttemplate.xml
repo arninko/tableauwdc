@@ -85,6 +85,12 @@
                     <lastfinishLatest>lastfinishEarliest</lastfinishLatest>  
                     <startLatest>finishLatest - ownDuration</startLatestt>
                     <finishLatest>nextStartLatest</finishLatest>  
+                    <slacks>
+                      <full aim="change duration without effect on critical path">finishLatest-startEarliest</full>
+                      <independent aim="use this slack first and recalculate start/finish">finishEarliest-startLatest</independent>
+                      <free aim="can be used after independent">finishEarliest-startEarliest</free>
+                      <dependent aim="">finishLatest-startLatest</dependent>
+                    </slacks>
                   </dependencies>
                   <resource>
                     <finance>
@@ -103,10 +109,18 @@
                 </step>
               <criticalPathMethod>
                 <steps>
-                  <step isCritical="Yes">0 = slack = startLatest - startEarliest = finishLatest - finishEarliest</step>
+                  <step isCritical="Yes">0 = slack = startLatest - startEarliest = finishLatest - finishEarliest
+                  </step>
                 </steps>
               </criticalPathMethod>
-              <estimation>currentTimePoint(ATE), projectDuration(OD), completionTime(ETC)=ATE+(OD-ATE*SPI)/SPI , projectCost(BAC), completionCost(EAC)=ACWP+(BAC-BCWP)/CPI </estimation>
+              <estimation>
+                <deviation>
+                  <overdue>plannedCostOfPlanned(BCWS), plannedCostOfCompleted(BCWP) , target(SPI)=BCWP/BCWS, SPI LT 1 = overdue completion</overdue>
+                  <overcost>plannedCostOfCompleted(BCWP), actualCostOfCompleted(ACWP), cost(CPI)=BCWP/ACWP, CPI LT 1 = overcost </overcost>
+                </deviation>
+                <completionTime>currentTimePoint(ATE), projectDuration(OD), completionTime(ETC)=ATE+(OD-ATE*SPI)/SPI</completionTime>
+                <completionCost>projectCost(BAC), completionCost(EAC)=ACWP+(BAC-BCWP)/CPI</completionCost>
+              </estimation>
             </steps>
           </plan>
         </control>
@@ -123,9 +137,6 @@
             </risk>
             <validation>
               <plan>
-                <steps>
-                </steps>
-                <estimation>currentTimePoint(ATE), projectDuration(OD), completionTime(ETC)=ATE+(OD-ATE*SPI)/SPI , projectCost(BAC), completionCost(EAC)=ACWP+(BAC-BCWP)/CPI </estimation>
               </plan>
             </validation>
             <contracts></contracts>
@@ -172,10 +183,7 @@
         <value>
           <validation>
             <report>
-                <steps>
-                </steps>
-                <deviation>plannedCostOfPlanned(BCWS), plannedCostOfCompleted(BCWP), actualCostOfCompleted(ACWP) , target(SPI)=BCWP/BCWS, SPI LT 1 = overdue completion , cost(CPI)=BCWP/ACWP, CPI LT 1 = overcost </deviation>
-                <estimation>currentTimePoint(ATE), projectDuration(OD), completionTime(ETC)=ATE+(OD-ATE*SPI)/SPI , projectCost(BAC), completionCost(EAC)=ACWP+(BAC-BCWP)/CPI </estimation>
+                <estimation></estimation>
             </report>
           </validation>
           <change>
