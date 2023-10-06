@@ -111,6 +111,15 @@ IPaddress, login, electronicFootPrint
 <project>
 <demand>capacity, concept</demand>
 <projectmanagement>
+<control>process/target
+<deviation>plannedCostOfPlanned(BCWS), plannedCostOfCompleted(BCWP), actualCostOfCompleted(ACWP)
+, target(SPI)=BCWP/BCWS, SPI LT 1 = overdue completion
+, cost(CPI)=BCWP/ACWP, CPI LT 1 = overcost
+</deviation>
+<estimation>currentTimePoint(ATE), projectDuration(OD), completionTime(ETC)=ATE+(OD-ATE*SPI)/SPI
+, projectCost(BAC), completionCost(EAC)=ACWP+(BAC-BCWP)/CPI
+</estimation>
+</control>	
 <contracts>
 <traditional>
 <prons>fullControl, efficiencyControl, costControl</prons>
