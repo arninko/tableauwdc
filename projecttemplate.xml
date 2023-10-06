@@ -65,18 +65,26 @@
           </risk>
           <plan>
             <steps>
-                <step>
+                <step style="realArrowOnGraph, virtualArrowOnGraph">
                   <value id=""></value>
                   <duration>
-                    <planned></planned>
+                    <planned>
+                      <ownDuration></ownDuration>
+                    </planned>
                     <actual></actual>
                   </duration>
-                  <dependencies>
+                  <dependencies style="pointOnGraph">
                     <steps>
                       <step type="neededForNextStep, sequential, overlap, waiting, recurring"></step>
                     </steps>
                     <functional type="missingPrerequisite"></functional>
                     <complexityScale></complexityScale>
+                    <startEarliest>maxPreviousFinishEarliest</startEarliest>
+                    <finishEarliest>ownDuration + startEarliest</finishEarliest>
+                    
+                    <lastfinishLatest>lastfinishEarliest</lastfinishLatest>  
+                    <startLatest>finishLatest - ownDuration</startLatestt>
+                    <finishLatest>nextStartLatest</finishLatest>  
                   </dependencies>
                   <resource>
                     <finance>
@@ -93,8 +101,13 @@
                     </people>
                   </resource>
                 </step>
+              <criticalPathMethod>
+                <steps>
+                  <step isCritical="Yes">0 = slack = startLatest - startEarliest = finishLatest - finishEarliest</step>
+                </steps>
+              </criticalPathMethod>
+              <estimation>currentTimePoint(ATE), projectDuration(OD), completionTime(ETC)=ATE+(OD-ATE*SPI)/SPI , projectCost(BAC), completionCost(EAC)=ACWP+(BAC-BCWP)/CPI </estimation>
             </steps>
-            <estimation>currentTimePoint(ATE), projectDuration(OD), completionTime(ETC)=ATE+(OD-ATE*SPI)/SPI , projectCost(BAC), completionCost(EAC)=ACWP+(BAC-BCWP)/CPI </estimation>
           </plan>
         </control>
       </requirements>
@@ -111,34 +124,6 @@
             <validation>
               <plan>
                 <steps>
-                  <step>
-                    <value id=""></value>
-                    <duration>
-                      <planned></planned>
-                      <actual></actual>
-                    </duration>
-                    <dependencies>
-                      <steps>
-                        <step type="neededForNextStep, sequential, overlap, waiting, recurring"></step>
-                      </steps>
-                      <functional type="missingPrerequisite"></functional>
-                      <complexityScale></complexityScale>
-                    </dependencies>
-                    <resource>
-                      <finance>
-                        <planned>3 FTE only</planned>
-                        <actual></actual>
-                      </finance>
-                      <equipment>
-                        <planned>not needed</planned>
-                        <actual></actual>
-                      </equipment>
-                      <people>
-                        <planned>3 FTE</planned>
-                        <actual></actual>
-                      </people>
-                    </resource>
-                  </step>
                 </steps>
                 <estimation>currentTimePoint(ATE), projectDuration(OD), completionTime(ETC)=ATE+(OD-ATE*SPI)/SPI , projectCost(BAC), completionCost(EAC)=ACWP+(BAC-BCWP)/CPI </estimation>
               </plan>
@@ -188,34 +173,6 @@
           <validation>
             <report>
                 <steps>
-                  <step>
-                    <value id=""></value>
-                    <duration>
-                      <planned></planned>
-                      <actual></actual>
-                    </duration>
-                    <dependencies>
-                      <steps>
-                        <step type="neededForNextStep, sequential, overlap, waiting, recurring"></step>
-                      </steps>
-                      <functional type="missingPrerequisite"></functional>
-                      <complexityScale></complexityScale>
-                    </dependencies>
-                    <resource>
-                      <finance>
-                        <planned>3 FTE only</planned>
-                        <actual></actual>
-                      </finance>
-                      <equipment>
-                        <planned>not needed</planned>
-                        <actual></actual>
-                      </equipment>
-                      <people>
-                        <planned>3 FTE</planned>
-                        <actual></actual>
-                      </people>
-                    </resource>
-                  </step>
                 </steps>
                 <deviation>plannedCostOfPlanned(BCWS), plannedCostOfCompleted(BCWP), actualCostOfCompleted(ACWP) , target(SPI)=BCWP/BCWS, SPI LT 1 = overdue completion , cost(CPI)=BCWP/ACWP, CPI LT 1 = overcost </deviation>
                 <estimation>currentTimePoint(ATE), projectDuration(OD), completionTime(ETC)=ATE+(OD-ATE*SPI)/SPI , projectCost(BAC), completionCost(EAC)=ACWP+(BAC-BCWP)/CPI </estimation>
