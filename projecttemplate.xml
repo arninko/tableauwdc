@@ -90,10 +90,10 @@
                     <finishLatest>nextStartLatest</finishLatest>  
                     <slacks>
                       <criticalStep>Yes: 0 = slack = startLatest - startEarliest = finishLatest - finishEarliest</criticalStep>
-                      <full aim="change duration without effect on critical path">finishLatest-startEarliest</full>
-                      <independent aim="use this slack first and recalculate start/finish">finishEarliest-startLatest</independent>
-                      <free aim="can be used after independent">finishEarliest-startEarliest</free>
-                      <dependent aim="">finishLatest-startLatest</dependent>
+                      <full aim="change duration without effect on critical path">nextFinishLatest-startEarliest</full>
+                      <independent aim="use this slack first and recalculate start/finish">nextStartEarliest-finishLatest</independent>
+                      <free aim="can be used after independent">nextStartEarliest-finishEarliest</free>
+                      <dependent aim="">nextStartLatest-finishLatest</dependent>
                     </slacks>
                   </dependencies>
                   <resource>
