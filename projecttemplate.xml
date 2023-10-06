@@ -94,7 +94,7 @@
                   </dependencies>
                   <resource>
                     <finance>
-                      <planned>3 FTE only</planned>
+                      <planned estimationMethod="basedOnSimilarProject, basedOnUnitPrice, basedOnCostType, basedOnStepResourceMatrix">3 FTE only</planned>
                       <actual></actual>
                     </finance>
                     <equipment>
