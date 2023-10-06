@@ -3,6 +3,16 @@
     <maturity>
       <candidates>
         <candidate>
+          <timing></timing>
+          <finance>
+            <CAPEX></CAPEX>
+            <OPEX></OPEX>
+            <ROI>
+              <saving></saving>
+              <revenue></revenue>
+            </ROI>
+          </finance>
+          <value></value>
         </candidate>
         <candidate>
         </candidate>
@@ -16,13 +26,6 @@
     </maturity>
     <selection>
       <candidate>
-        <timing></timing>
-        <finance>
-          <CAPEX></CAPEX>
-          <OPEX></OPEX>
-          <ROI></ROI>
-        </finance>
-        <value></value>
       </candidate>
     </selection>
     <planning>
