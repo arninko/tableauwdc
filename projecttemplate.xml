@@ -27,23 +27,11 @@
     </selection>
     <planning>
       <requirements>
-        <timing>
-          <dependencies>
-            <process type="neededForNextStep, sequential, overlap, waiting, recurring"></process>
-            <functional type="missingPrerequisite"></functional>
-            <complexityScale></complexityScale>
-          </dependencies>
-        </timing>
-        <finance></finance>
-        <value>
+        <control>
           <risk assessment="HAZOP, FMEA, SWOT, PETSLE">
             <functional>
-              <functionalValues>
-                <functionalValue>call forwarding</functionalValue>
-              </functionalValues>
-              <nonFunctionalValues>
-                <nonFunctionalValue>style</nonFunctionalValue>
-              </nonFunctionalValues>
+              <value type="function" criticalicity="must">call forwarding</value>
+              <value type="outlook" criticalicity="must">style</value>
             </functional>
             <infrastructures>        
               <infrastructure>        
@@ -75,7 +63,40 @@
               <ROI></ROI>
             </finance>      
           </risk>
-        </value>
+          <plan>
+            <steps>
+                <step>
+                  <value id=""></value>
+                  <duration>
+                    <planned></planned>
+                    <actual></actual>
+                  </duration>
+                  <dependencies>
+                    <steps>
+                      <step type="neededForNextStep, sequential, overlap, waiting, recurring"></step>
+                    </steps>
+                    <functional type="missingPrerequisite"></functional>
+                    <complexityScale></complexityScale>
+                  </dependencies>
+                  <resource>
+                    <finance>
+                      <planned>3 FTE only</planned>
+                      <actual></actual>
+                    </finance>
+                    <equipment>
+                      <planned>not needed</planned>
+                      <actual></actual>
+                    </equipment>
+                    <people>
+                      <planned>3 FTE</planned>
+                      <actual></actual>
+                    </people>
+                  </resource>
+                </step>
+            </steps>
+            <estimation>currentTimePoint(ATE), projectDuration(OD), completionTime(ETC)=ATE+(OD-ATE*SPI)/SPI , projectCost(BAC), completionCost(EAC)=ACWP+(BAC-BCWP)/CPI </estimation>
+          </plan>
+        </control>
       </requirements>
       <applicationProcess type="open, selective, twolevel, invitation">
         <providers>
@@ -88,7 +109,39 @@
                 <bcpdrp></bcpdrp>
             </risk>
             <validation>
-              <plan></plan>
+              <plan>
+                <steps>
+                  <step>
+                    <value id=""></value>
+                    <duration>
+                      <planned></planned>
+                      <actual></actual>
+                    </duration>
+                    <dependencies>
+                      <steps>
+                        <step type="neededForNextStep, sequential, overlap, waiting, recurring"></step>
+                      </steps>
+                      <functional type="missingPrerequisite"></functional>
+                      <complexityScale></complexityScale>
+                    </dependencies>
+                    <resource>
+                      <finance>
+                        <planned>3 FTE only</planned>
+                        <actual></actual>
+                      </finance>
+                      <equipment>
+                        <planned>not needed</planned>
+                        <actual></actual>
+                      </equipment>
+                      <people>
+                        <planned>3 FTE</planned>
+                        <actual></actual>
+                      </people>
+                    </resource>
+                  </step>
+                </steps>
+                <estimation>currentTimePoint(ATE), projectDuration(OD), completionTime(ETC)=ATE+(OD-ATE*SPI)/SPI , projectCost(BAC), completionCost(EAC)=ACWP+(BAC-BCWP)/CPI </estimation>
+              </plan>
             </validation>
             <contracts></contracts>
             <finance>
@@ -102,9 +155,6 @@
     </planning>
     <decision>
       <requirements>
-        <timing></timing>
-        <budget></budget>
-        <value>
           <risk assessment="HAZOP, FMEA, SWOT, PETSLE">
             <functional></functional>
             <system></system>
@@ -113,10 +163,12 @@
               <pm></pm>
               <internal></internal>
               <consultancy></consultancy>
-              <providers></providers>
+              <provider></provider>
             </stakeholder>
           </risk>
-        </value>
+          <validation>
+              <plan></plan>
+          </validation>
       </requirements>
       <provider>
         <risk assessment="HAZOP, FMEA, SWOT, PETSLE">
@@ -134,7 +186,40 @@
         <budget></budget>
         <value>
           <validation>
-            <report></report>
+            <report>
+                <steps>
+                  <step>
+                    <value id=""></value>
+                    <duration>
+                      <planned></planned>
+                      <actual></actual>
+                    </duration>
+                    <dependencies>
+                      <steps>
+                        <step type="neededForNextStep, sequential, overlap, waiting, recurring"></step>
+                      </steps>
+                      <functional type="missingPrerequisite"></functional>
+                      <complexityScale></complexityScale>
+                    </dependencies>
+                    <resource>
+                      <finance>
+                        <planned>3 FTE only</planned>
+                        <actual></actual>
+                      </finance>
+                      <equipment>
+                        <planned>not needed</planned>
+                        <actual></actual>
+                      </equipment>
+                      <people>
+                        <planned>3 FTE</planned>
+                        <actual></actual>
+                      </people>
+                    </resource>
+                  </step>
+                </steps>
+                <deviation>plannedCostOfPlanned(BCWS), plannedCostOfCompleted(BCWP), actualCostOfCompleted(ACWP) , target(SPI)=BCWP/BCWS, SPI LT 1 = overdue completion , cost(CPI)=BCWP/ACWP, CPI LT 1 = overcost </deviation>
+                <estimation>currentTimePoint(ATE), projectDuration(OD), completionTime(ETC)=ATE+(OD-ATE*SPI)/SPI , projectCost(BAC), completionCost(EAC)=ACWP+(BAC-BCWP)/CPI </estimation>
+            </report>
           </validation>
           <change>
             <functional></functional>
