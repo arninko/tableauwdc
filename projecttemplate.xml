@@ -17,23 +17,67 @@
     <selection>
       <candidate>
         <timing></timing>
-        <budget></budget>
+        <finance>
+          <CAPEX></CAPEX>
+          <OPEX></OPEX>
+          <ROI></ROI>
+        </finance>
         <value></value>
       </candidate>
     </selection>
     <planning>
       <requirements>
-        <timing></timing>
-        <budget></budget>
+        <timing>
+          <dependencies>
+            <process type="neededForNextStep, sequential, overlap, waiting, recurring"></process>
+            <functional type="missingPrerequisite"></functional>
+            <complexityScale></complexityScale>
+          </dependencies>
+        </timing>
+        <finance></finance>
         <value>
           <risk assessment="HAZOP, FMEA, SWOT, PETSLE">
-            <functional></functional>
-            <system></system>
-            <stakeholder></stakeholder>
+            <functional>
+              <functionalValues>
+                <functionalValue>call forwarding</functionalValue>
+              </functionalValues>
+              <nonFunctionalValues>
+                <nonFunctionalValue>style</nonFunctionalValue>
+              </nonFunctionalValues>
+            </functional>
+            <infrastructures>        
+              <infrastructure>        
+              </infrastructure>
+              <infrastructure>        
+              </infrastructure>
+            </infrastructures>
+            <marketing>
+              <stakeholders>
+                <sponsors>
+                  <sponsor relation="-2=strongly refuse, 0= neutral, 2=strongly supports" influence="1=negligable, 2= significant, 3=primary"></sponsor>
+                </sponsors>
+                <pm relation="" influence=""></pm>
+                <internals>
+                  <internal relation="" influence=""></internal>
+                </internals>
+                <consultancy></consultancy>
+                <providers>
+                  <providers relation="" influence=""></providers>
+                </providers>
+              </stakeholders>
+              <stakeholderMap type="decartes, venn">
+              </stakeholderMap>  
+            </marketing>      
+            <security></security>      
+            <finance>
+              <CAPEX></CAPEX>
+              <OPEX></OPEX>
+              <ROI></ROI>
+            </finance>      
           </risk>
         </value>
       </requirements>
-      <applicationProcess>
+      <applicationProcess type="open, selective, twolevel, invitation">
         <providers>
           <provider>
             <risk assessment="HAZOP, FMEA, SWOT, PETSLE">
@@ -45,21 +89,42 @@
               <plan></plan>
             </validation>
             <contracts></contracts>
-            <finance></finance>
+            <finance>
+              <CAPEX></CAPEX>
+              <OPEX></OPEX>
+              <COGS></COGS>
+            </finance>
           </provider>
         </providers>
       </applicationProcess>
     </planning>
     <decision>
-        <provider>
+      <requirements>
+        <timing></timing>
+        <budget></budget>
+        <value>
           <risk assessment="HAZOP, FMEA, SWOT, PETSLE">
-              <responsibility></responsibility>      
-              <security></security>      
-              <bcpdrp></bcpdrp>
+            <functional></functional>
+            <system></system>
+            <stakeholder>
+              <sponsors></sponsors>
+              <pm></pm>
+              <internal></internal>
+              <consultancy></consultancy>
+              <providers></providers>
+            </stakeholder>
           </risk>
-          <contracts></contracts>
-          <finance></finance>
-        </provider>
+        </value>
+      </requirements>
+      <provider>
+        <risk assessment="HAZOP, FMEA, SWOT, PETSLE">
+            <responsibility></responsibility>      
+            <security></security>      
+            <bcpdrp></bcpdrp>
+        </risk>
+        <contracts type="traditional, offTheShelfSolution, management"></contracts>
+        <finance type="priceBased, costBased, targetBased"></finance>
+      </provider>
     </decision> 
     <execution>
       <review>
