@@ -89,6 +89,7 @@
                     <startLatest>finishLatest - ownDuration</startLatest>
                     <finishLatest>nextStartLatest</finishLatest>  
                     <slacks>
+                      <criticalStep>Yes: 0 = slack = startLatest - startEarliest = finishLatest - finishEarliest</criticalStep>
                       <full aim="change duration without effect on critical path">finishLatest-startEarliest</full>
                       <independent aim="use this slack first and recalculate start/finish">finishEarliest-startLatest</independent>
                       <free aim="can be used after independent">finishEarliest-startEarliest</free>
@@ -110,12 +111,6 @@
                     </people>
                   </resource>
                 </step>
-              <criticalPathMethod>
-                <steps>
-                  <step isCritical="Yes">0 = slack = startLatest - startEarliest = finishLatest - finishEarliest
-                  </step>
-                </steps>
-              </criticalPathMethod>
               <estimation>
                 <deviation>
                   <overdue>plannedCostOfPlanned(BCWS), plannedCostOfCompleted(BCWP) , target(SPI)=BCWP/BCWS, SPI LT 1 = overdue completion</overdue>
