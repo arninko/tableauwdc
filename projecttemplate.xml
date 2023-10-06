@@ -83,7 +83,7 @@
                     <finishEarliest>ownDuration + startEarliest</finishEarliest>
                     
                     <lastfinishLatest>lastfinishEarliest</lastfinishLatest>  
-                    <startLatest>finishLatest - ownDuration</startLatestt>
+                    <startLatest>finishLatest - ownDuration</startLatest>
                     <finishLatest>nextStartLatest</finishLatest>  
                     <slacks>
                       <full aim="change duration without effect on critical path">finishLatest-startEarliest</full>
