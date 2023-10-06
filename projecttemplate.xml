@@ -85,10 +85,10 @@
     </deployment>
     <routine>
       <review>
+        <maturity></maturity>
         <event></event>
         <stakeholder></stakeholder>
         <provider></provider>
-        <maturity></maturity>
       </review>
       <finance></finance>
       <infrastructure></infrastructure>
